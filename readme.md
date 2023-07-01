@@ -12,13 +12,10 @@
 
 ## 使用方法
 
-1. 安装 miniconda 或者 anaconda
-2. 使用 conda 创建一个新的虚拟环境，推荐命名为 MAA `conda create -n MAA python=3.11`
-3. 激活虚拟环境 `conda activate MAA`
-4. 在命令行中打开当前路径，安装依赖 `pip install -r requirements.txt`
+1. 安装 python，并确保它可以在命令行中运行，即打开命令行，输入`python -v`，如果出现 python 的版本信息，则说明安装成功。 如果你明确知道你没有安装 python，又不知道应该如何安装，推荐从 Microsoft Store 中安装 [Python3.11](https://www.microsoft.com/store/productId/9NRWMJP3717K)，点击安装即可，无需额外配置即可运行
 5. 将脚本 `MAA-Notification.bat` 的绝对路径添加到 MAA 的`设置-连接设置-结束后脚本`中
 6. 将`MAA-Notification.bat`中的`Your Path to main.py`替换为`main.py`的绝对路径
-7. 在`main.py`中的`LOG_PATH`填入 MAA 日志文件`gui.log`的绝对路径，其应当位于 MAA 文件夹下`MAA-Arknights\debug\gui.log`
+7. 在`main.py`中的`LOG_PATH`填入 MAA 日志文件`gui.log`的绝对路径，其应当位于 MAA 文件夹下`MAA-Arknights\debug\gui.log`如果没有，请先完整运行一次 MAA，确保其生成
 8. 在`main.py`中的`PUSHDEER_SERVER`填入你的 PushDeer 服务器地址，如果使用官方服务器请留空，如`PUSHDEER_SERVER = ''`
-9. 在`main.py`中的`PUSHDEER_KEY`填入你的key，key 的具体获取方式请参考[PushDeer](http://pushdeer.com)的文档，简单来说需要使用 PushDeer 客户端获得 key
+9. 在`main.py`中的`PUSHDEER_KEY`填入你的key，简单来说需要使用 PushDeer 客户端获得 key，然后将其填入`PUSHDEER_KEY`中。如果使用官方服务器，iOS/iPadOS/MacOS 用户 请在 AppStore 中下载 [PushDeer](https://apps.apple.com/cn/app/pushdeer/id1596771139)，注册登录后即可获得 key。安卓用户和自架服务器版本请参考[PushDeer官网](http://pushdeer.com)的文档
 10. Enjoy!
