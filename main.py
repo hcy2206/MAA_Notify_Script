@@ -1,7 +1,7 @@
 from pypushdeer import PushDeer
 import re
 
-# LOG_PATH = 'D:\Green Tools\MAA-Arknights\debug\gui.log' # 日志文件路径
+# LOG_PATH = '..\debug\gui.log' # 日志文件路径
 LOG_PATH = 'gui.log'  # 测试用 日志文件路径
 KEYWORD_START = 'Main windows log clear.'
 KEYWORD_ERROR = '任务出错'
