@@ -30,6 +30,8 @@ def search_keyword():
                 line_report_count[0] = i
             if KEYWORD_REPORT[1] in lines[i]:  # 记录 完成任务: Fight 的行数
                 line_report_count[1] = i
+        if line_report_count[0] == 0 or line_report_count[1] == 0:
+            line_report = ['No Fight.']
         for i in range(line_report_count[1], line_report_count[0], -1):  # 倒序查找，找到最后一个 掉落统计: 的行数
             if line_report_count[1] - line_report_count[0] == 1:
                 line_report = ['No Drop.']
