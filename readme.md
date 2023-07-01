@@ -20,5 +20,5 @@
 6. 将`MAA-Notification.bat`中的`Your Path to main.py`替换为`main.py`的绝对路径
 7. 在`main.py`中的`LOG_PATH`填入 MAA 日志文件`gui.log`的绝对路径，其应当位于 MAA 文件夹下`MAA-Arknights\debug\gui.log`
 8. 在`main.py`中的`PUSHDEER_SERVER`填入你的 PushDeer 服务器地址，如果使用官方服务器请留空，如`PUSHDEER_SERVER = ''`
-9. 在`main.py`中的`PUSHDEER_KEY`填入你的key，key 的具体获取方式请参考[PushDeer](http://pushdeer.com)的文档，简单来说需要使用 Pushdeer 客户端获得 key
+9. 在`main.py`中的`PUSHDEER_KEY`填入你的key，key 的具体获取方式请参考[PushDeer](http://pushdeer.com)的文档，简单来说需要使用 PushDeer 客户端获得 key
 10. Enjoy!
