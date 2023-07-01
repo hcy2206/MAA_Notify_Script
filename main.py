@@ -2,13 +2,14 @@ from pypushdeer import PushDeer
 import re
 
 LOG_PATH = 'D:\Green Tools\MAA-Arknights\debug\gui.log' # 日志文件路径
+# LOG_PATH = 'gui.log'  # 测使用 日志文件路径
 KEYWORD_START = 'Main windows log clear.'
 KEYWORD_ERROR = '任务出错'
 KEYWORD_WARNING = '代理指挥失误'
 KEYWORD_REPORT = ['开始任务: Fight', '完成任务: Fight', '掉落统计:']
 KEYWORD_REPORT_BREAK = ['已开始行动', '代理指挥失误']
 
-PUSHDEER_SERVER = 'http://8.130.41.75:8800'  # PushDeer 服务器地址
+PUSHDEER_SERVER = 'http://8.130.41.75:8800'  # PushDeer 服务器地址, 为空则使用官方服务器，具体参考 https://sct.ftqq.com/
 PUSHDEER_KEY = 'PDU1TsCU2jU7jdh8LzZIJUjs9wf5nqR8coLlo'  # PushDeer API Key
 
 
@@ -29,17 +30,20 @@ def search_keyword():
                 line_report_count[0] = i
             if KEYWORD_REPORT[1] in lines[i]:  # 记录 完成任务: Fight 的行数
                 line_report_count[1] = i
-        for i in range(line_report_count[1], line_report_count[0], -1):  # 倒序查找，找到最后一个 掉落统计: 的行数
-            if line_report_count[1] - line_report_count[0] == 1:
-                line_report = ['No Drop.']
-                break
-            if KEYWORD_REPORT[2] in lines[i]:
-                for j in range(i, line_report_count[1]):
-                    # 跳过 代理指挥失误
-                    if KEYWORD_REPORT_BREAK[0] in lines[j] or KEYWORD_REPORT_BREAK[1] in lines[j]:
-                        break
-                    line_report.append(re.sub(r'\s*\(.*?\)', '', lines[j]))  # 去除掉落统计行中的括号及括号内内容
-                break
+        if line_report_count[0] == 0 or line_report_count[1] == 0:
+            line_report = ['No Fight.']  # 没有 开始任务: Fight 或 完成任务: Fight 的行数，说明没有Fight任务
+        else:
+            for i in range(line_report_count[1], line_report_count[0], -1):  # 倒序查找，找到最后一个 掉落统计: 的行数
+                if line_report_count[1] - line_report_count[0] == 1:
+                    line_report = ['No Drop.']
+                    break
+                if KEYWORD_REPORT[2] in lines[i]:
+                    for j in range(i, line_report_count[1]):
+                        # 跳过 代理指挥失误
+                        if KEYWORD_REPORT_BREAK[0] in lines[j] or KEYWORD_REPORT_BREAK[1] in lines[j]:
+                            break
+                        line_report.append(re.sub(r'\s*\(.*?\)', '', lines[j]))  # 去除掉落统计行中的括号及括号内内容
+                    break
         if KEYWORD_ERROR in line_error or KEYWORD_WARNING in line_error:
             return line_error, line_report
         else:
@@ -67,7 +71,10 @@ def line_report_format(line_report):
 
 
 def notify(text, desc):
-    pushdeer = PushDeer(PUSHDEER_SERVER, PUSHDEER_KEY)
+    if PUSHDEER_SERVER != '':
+        pushdeer = PushDeer(PUSHDEER_SERVER, PUSHDEER_KEY)
+    else:
+        pushdeer = PushDeer(PUSHDEER_KEY)
     pushdeer.send_markdown(text, desc)
 
 
