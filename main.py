@@ -8,8 +8,8 @@ KEYWORD_WARNING = '代理指挥失误'
 KEYWORD_REPORT = ['开始任务: Fight', '完成任务: Fight', '掉落统计:']
 KEYWORD_REPORT_BREAK = ['已开始行动', '代理指挥失误']
 
-PUSHDEER_SERVER = 'http://8.130.41.75:8800'  # PushDeer 服务器地址
-PUSHDEER_KEY = 'PDU1TsCU2jU7jdh8LzZIJUjs9wf5nqR8coLlo'  # PushDeer API Key
+PUSHDEER_SERVER = 'http://yourserver.address'  # PushDeer 服务器地址
+PUSHDEER_KEY = 'Your pushdeer KEY'  # PushDeer API Key
 
 
 def search_keyword():
