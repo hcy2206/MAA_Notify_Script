@@ -1,4 +1,4 @@
-cd Personal_Notify
+cd MAA_Notify_Script
 
 if not exist venv (
     python -m venv venv
