@@ -7,8 +7,11 @@
 
 基于 [PushDeer](http://pushdeer.com) 提供的 API，实现了一个简单的通知脚本，通过对于 MAA 运行日志的分析，实现了当 MAA 一次运行结束之后，通过 Pushdeer 的方式 向用户推送此次运行的结果，包括是否出错、一些错误日志以及本次运行所掉落的物品。
 
-下图是一个通知的样例：
+下图是一些通知的样例：
+
 ![IMG_5382](https://markdown-tuchuang-hcy2206.oss-cn-shanghai.aliyuncs.com/img/202307011605689.jpg)
+
+![image-20230705210408694](https://markdown-tuchuang-hcy2206.oss-cn-shanghai.aliyuncs.com/img/202307052104175.png)
 
 ## 使用方法
 
