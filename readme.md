@@ -19,5 +19,10 @@
 2. 安装 python，并确保它可以在命令行中运行，即打开命令行，输入`python -v`，如果出现 python 的版本信息，则说明安装成功。 如果你明确知道你没有安装 python，又不知道应该如何安装，推荐从 Microsoft Store 中安装 [Python3.11](https://www.microsoft.com/store/productId/9NRWMJP3717K)，点击安装即可，无需额外配置即可运行
 5. 将脚本 `MAA-Notification.bat` 的相对路径添加到 MAA 的`设置-连接设置-结束后脚本`中，即在该输入框中填入`MAA_Notify_Script\MAA-Notification.bat`
 8. 在`main.py`中的`PUSHDEER_SERVER`填入你的 PushDeer 服务器地址，如果使用官方服务器请留空，如`PUSHDEER_SERVER = ''`
-9. 在`main.py`中的`PUSHDEER_KEY`填入你的key，简单来说需要使用 PushDeer 客户端获得 key，然后将其填入`PUSHDEER_KEY`中。如果使用官方服务器，iOS/iPadOS/MacOS 用户 请在 AppStore 中下载 [PushDeer](https://apps.apple.com/cn/app/pushdeer/id1596771139)，注册登录后即可获得 key。安卓用户和自架服务器版本请参考[PushDeer官网](http://pushdeer.com)的文档
+9. 在`main.py`中的`PUSHDEER_KEY`填入你的key，简单来说需要使用 PushDeer 客户端获得 key，然后将其填入`PUSHDEER_KEY`中。
+10. PushDeer 官方服务器 key 的获取：
+    1. iOS/iPadOS/MacOS 用户 请在 AppStore 中下载 [PushDeer](https://apps.apple.com/cn/app/pushdeer/id1596771139)，使用 `Apple` 账号或者`微信`登录。安卓用户请从[官网](http://pushdeer.com)上下载 apk 安装，使用`微信`登录。
+    2. 首次登录会提示需要注册设备，点击`注册`即可。
+    3. 注册成功后，点击下边栏的`Key`选项，即可看到你的 key，将其填入`PUSHDEER_KEY`中。
+    3. 如何自行架设服务器以及自架版 PushDeer 请参考[PushDeer官网](http://pushdeer.com)的文档
 10. Enjoy!
