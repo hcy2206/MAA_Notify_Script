@@ -49,6 +49,8 @@ def search_keyword():
 
 
 def line_report_format(line_report):
+    if len(line_report) == 0:
+        return 'Error'
     if len(line_report) == 1:
         return line_report[0]
     for i in range(len(line_report)):
