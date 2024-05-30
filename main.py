@@ -70,9 +70,9 @@ def line_report_format(line_report):
 
 def notify(text, desc):
     if PUSHDEER_SERVER != '':
-        pushdeer = PushDeer(PUSHDEER_SERVER, PUSHDEER_KEY)
+        pushdeer = PushDeer(server=PUSHDEER_SERVER, pushkey=PUSHDEER_KEY)
     else:
-        pushdeer = PushDeer(PUSHDEER_KEY)
+        pushdeer = PushDeer(pushkey=PUSHDEER_KEY)
     pushdeer.send_markdown(text, desc)
 
 
