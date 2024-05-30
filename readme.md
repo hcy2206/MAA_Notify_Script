@@ -15,7 +15,7 @@
 
 ## 使用方法
 
-1. [下载本项目](https://github.com/hcy2206/MAA_Notify_Script/releases/download/v3.1.0/MAA_Notify_Script.zip) 解压后将得到的`MAA_Notify_Script`文件夹放置在 MAA 主文件夹`MAA-Arknights`下
+1. [下载本项目](https://github.com/hcy2206/MAA_Notify_Script/releases/latest) 解压后将得到的`MAA_Notify_Script`文件夹放置在 MAA 主文件夹`MAA-Arknights`下，务必要保证文件夹名为`MAA_Notify_Script`
 2. 安装 python，并确保它可以在命令行中运行，即打开命令行，输入`python -V`，如果出现 python 的版本信息，则说明安装成功。 如果你明确知道你没有安装 python，又不知道应该如何安装，推荐从 Microsoft Store 中安装 [Python3.11](https://www.microsoft.com/store/productId/9NRWMJP3717K)，点击安装即可，无需额外配置即可运行
 5. 将脚本 `MAA-Notification.bat` 的相对路径添加到 MAA 的`设置-连接设置-结束后脚本`中，即在该输入框中填入`MAA_Notify_Script\MAA-Notification.bat`
 8. 在`main.py`中的`PUSHDEER_SERVER`填入你的 PushDeer 服务器地址，如果使用官方服务器请留空，如`PUSHDEER_SERVER = ''`
